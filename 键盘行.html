@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        5.键盘行
+        给你一个字符串数组words，只返回可以使用在美式键盘同一行的字母打印出来的单词。
+    </p>
+    <p>
+        请注意，字符串不区分大小写，相同字母的大小写形式都被视为在同一行。
+    </p>
+    <p>
+        美式键盘中
+        第一行由字符"qwertyuiop”组成。
+        第二行由字符“asdfghjkl”组成
+        第三行由字符“zxcvbnm”组成。
+    </p>
+    <p>
+        示例1
+        输入: words=["Hello"," Alaska","Dad"," Peace"]
+        输出：["Alaska","Dad"]
+        解释：由于不区分大小写，“a”和“A”都在美式键盘的第二行。
+    </p>
+    <p>
+        示例2：
+        输入：words=["omk"]
+        输出：[]
+    </p>
+    <p>
+        示例3
+        输入：words=["adsdf","sfd"]
+        输出：["adsdf",sfd*]
+    </p>
+</body>
+<script>
+    var words=["Hello","Alaska","Dad","Peace","tree"];
+    console.log(sameLine(words));
+    
+    function sameLine(words) {
+        // words.unshift(" ");
+        // words.push(" ");
+        // //console.log(words);
+        // words = words.join("  ");
+        // //console.log(words);
+        // var reg = / [qwertyuiopQWERTYUIOP]+ | [asdfghjklASDFGHJKL]+ | [zxcvbnmZXCVBNM]+ /g
+        // return words.match(reg);
+        var reg = /^[qwertyuiopQWERTYUIOP]+$|^[asdfghjklASDFGHJKL]+$|^[zxcvbnmZXCVBNM]+$/g
+        return words.map(item => item.match(reg)).filter(Boolean);
+    }
+</script>
+</html>

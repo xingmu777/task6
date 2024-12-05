@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //var a = prompt("请输入IP4地址：");
+    var a = "255.255.255.256";
+    //var a = "255.1.1.1";
+    //var a = "5";
+    var reg = /(25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)((\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3})/;
+    //var reg = /^(25[0-5]|2[0-4]\d|1\d\d|\d{1,2})$/;
+    console.log(a.match(reg));
+    console.log(reg.test(a));
+    
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        6.各位相加
+        给定一个非负整数num，反复将各个位上的数字相加，直到结果为一位数。返回这个结果。
+    </p>
+    <p>
+        示例1：
+        输入：num=38
+        输出：2
+        解释：各位相加的过程为
+        38 -> 3 + 8 -> 11 
+        11 -> 1 + 1 -> 2
+        由于2是一位数，所以返回2。
+    </p>
+    <p>
+        示例2：
+        输入：num=0
+        输出：0
+    </p>
+</body>
+<script>
+    var num = prompt("请输入数字：");
+    //var num = 38;
+    console.log(addUp(num));
+    
+    function addUp(num) {
+        var reg1 = /\d/g;
+        var reg2 = /^\d$/;
+        var snum = num;
+        while(!reg2.test(snum)) {
+            var arr = snum.toString().match(reg1);
+            snum = 0;
+            for(var i=0;i<arr.length;i++) {
+                snum += Number(arr[i]);
+            }
+            console.log("循环次数");
+            
+        }
+        return snum;
+    }
+</script>
+</html>
